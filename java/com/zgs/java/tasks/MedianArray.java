@@ -4,51 +4,45 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class MedianArray {
-    public static int[] AccendingOrder(int [] num1 , int [] num2){
-
-        int [] newArr = new int[num1.length + num2.length];
-        for(int i = 0; i< num2 .length; i++){
-            int a = num2[i];
-            for(int j = 0; j< num1.length; j++){
-                int b = num1[j];
-                if( a < b){
-                    num2[i] = b;
-                    num1[j] = a;
-                    break;
-                }
-            }
-        }
+    public static int [] MergeArray(int [] num1 , int [] num2){
+        int [] newarr = new int[num1.length + num2.length];
         boolean isFirst = true;
-        int index = 0;
-        for(int k = 0; k< newArr.length; k++){
-            if(isFirst) {
-                newArr[k] = num1[index];
-                if (k == num1.length - 1) {
-                    index = -1;
+        int k = 0;
+        for(int i = 0; i< newarr.length; i++){
+            if(isFirst){
+                newarr[i] = num1[k];
+                if(i == num1.length - 1){
+                    k = -1;
                     isFirst = false;
                 }
             }
-            else if(!isFirst ) {
-                newArr[k] = num2[index];
-                if (index == num2.length - 1) {
-                    break;
+            else{
+                newarr[i] = num2[k];
+            }
+            k++;
+        }
+        for(int m = 0; m< newarr.length; m++){
+            for(int j = m; j>0; j--){
+                int a = newarr[j];
+                int b = newarr[j -1];
+                if(b > a){
+                    newarr[j] = b;
+                    newarr[j - 1] = a;
                 }
             }
-            index++;
         }
-        return newArr;
+        return newarr;
     }
-
-    public static double findMedian(int [] array , int n){
+    public static double findMedian(int [] array ,int length){
         double res = 0.0f;
-        if(n % 2 == 1){
-            res = array[n/2];
-            return res;
+
+        if(length % 2 == 0){
+            res = (array[length / 2] + array[(length/2) - 1])/2;
         }
-        else{
-            res =  (array[n /2] + array[(n/2) - 1])/2f;
-            return res;
+        else {
+            res = length / 2f;
         }
+        return res;
     }
     public static void main(String[] args){
         Scanner scan = new Scanner(System.in);
@@ -66,8 +60,8 @@ public class MedianArray {
         }
         System.out.println("Array 1: "+ Arrays.toString(num1));
         System.out.println("Array 2: "+ Arrays.toString(num2));
-        int array [] = AccendingOrder(num1 , num2);
+        int array [] = MergeArray(num1 , num2);
         System.out.println("Merged Arrray : "+Arrays.toString(array));
-        System.out.println("Median : %5"+findMedian(array , array.length));
+        System.out.printf("Median : %.5f\n",findMedian(array , array.length));
     }
 }
