@@ -37,7 +37,7 @@ public class MedianArray {
         double res = 0.0f;
 
         if(length % 2 == 0){
-            res = (array[length / 2] + array[(length/2) - 1])/2;
+            res = (array[length / 2] + array[(length/2) - 1])/2f;
         }
         else {
             res = length / 2f;
