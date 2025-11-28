@@ -40,7 +40,7 @@ public class MedianArray {
             res = (array[length / 2] + array[(length/2) - 1])/2f;
         }
         else {
-            res = length / 2f;
+            res = array[length/2];
         }
         return res;
     }
