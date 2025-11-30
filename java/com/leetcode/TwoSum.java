@@ -1,6 +1,9 @@
 package com.leetcode;
-//https://leetcode.com/problems/two-sum/description/
+
 public class TwoSum {
+    /**
+     *@link https://leetcode.com/problems/two-sum/description
+  */
     public int[] twoSum(int[] nums, int target) {
 
         for(int i = 0; i< nums.length -1; i++){
