@@ -6,10 +6,10 @@ import java.util.Scanner;
 public class TargetFind {
         public static void  findTarget(int [] arr , int n){
 
-            for(int i = 0; i< arr.length; i++){
+            for(int i = 0; i< arr.length; i++) {
                 int a = arr[i];
-                if(a > n || a == n ){
-                    System.out.println("The target number is position at "+ i);
+                if (a > n || a == n) {
+                    System.out.println("The target number is position at " + i);
                 }
             }
             System.out.println("The target number will be placed at "+ arr.length +" position");;
