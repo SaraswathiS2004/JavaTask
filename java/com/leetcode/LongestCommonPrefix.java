@@ -6,7 +6,6 @@ public class LongestCommonPrefix {
             int index = 0;
             for(int i = 0; i< strs[0].length(); i++){
                 String s = strs[0];
-                boolean isTrue = true;
                 if(s.length() > index) {
                     char c = s.charAt(index);
                     int ind = 1;
@@ -21,9 +20,7 @@ public class LongestCommonPrefix {
                         }
                         ind++;
                     }
-                    if(isTrue) {
-                        result += c;
-                    }
+                    result += c;
                     index++;
                 }
             }

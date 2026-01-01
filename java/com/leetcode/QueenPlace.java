@@ -35,9 +35,7 @@ public class QueenPlace {
         if(x >= path.length){
             return true;
         }
-        if((x >= path.length || x < 0) || (y >=path[0].length || y < 0)){
-            return false;
-        }
+
         boolean isTrue = false;
         for(int i = 0; i< path[x].length; i++){
             int n = path[x][i];
@@ -54,18 +52,25 @@ public class QueenPlace {
         }
         return isTrue;
     }
+    public static int[][] NQueenBoard(int n){
+        int path[][] = new int[n][n];
+        findRoute(path , 0 , 0);
+        int [][] returnArr = new int[n][n];
+        for(int j = 0; j< path.length; j++){
+            for(int i = 0; i< path[j].length; i++){
+                int x = path[j][i];
+                returnArr[j][i] = x == 1 ? x : 0;
+            }
+        }
+      return returnArr;
+    }
     public static void main(String [] args){
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter the number Of queen");
         int n = scan.nextInt();
-        int [][] path = new int[n][n];
-        findRoute(path , 0 , 0);
-
-        for(int[] array : path){
-            for(int x : array){
-                System.out.print(x == 1 ? x +" " : 0 +" ");
-            }
-            System.out.println();
+        int path[][] = NQueenBoard(n);
+        for(int[] a:path){
+            System.out.println(Arrays.toString(a));
         }
     }
 }
