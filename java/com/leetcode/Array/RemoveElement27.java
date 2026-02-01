@@ -1,6 +1,4 @@
-package com.leetcode;
-
-import java.util.Arrays;
+package com.leetcode.Array;
 
 public class RemoveElement27 {
     public int removeElement ( int[] nums, int val){

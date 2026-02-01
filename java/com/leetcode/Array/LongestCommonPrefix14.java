@@ -1,6 +1,6 @@
-package com.leetcode;
+package com.leetcode.Array;
 
-public class LongestCommonPrefix {
+public class LongestCommonPrefix14 {
         public String longestCommonPrefix(String[] strs) {
             String result = "";
             int index = 0;

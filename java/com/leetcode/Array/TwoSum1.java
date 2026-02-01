@@ -1,10 +1,9 @@
-package com.leetcode;
+package com.leetcode.Array;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.HashMap;
 
-public class TwoSum {
+public class TwoSum1 {
     /**
      *@link https://leetcode.com/problems/two-sum/description
   */
