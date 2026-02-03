@@ -1,4 +1,4 @@
-package com.leetcode.dynamicProgramming.StringProblems;
+package com.leetcode.StringProblems;
 
 public class AddBinary67{
 public String addBinary(String a, String b) {
