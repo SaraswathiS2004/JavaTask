@@ -11,8 +11,6 @@ public class CheckifEveryRowandColumnContainsAllNumbers2133 {
         return horizontal && vertical;
     }
     public static boolean checkHorizontal(int [][] nums ){
-
-        int y = 0;
         for(int j = 0; j< nums.length; j++) {
             ArrayList<Integer> map = new ArrayList<>();
             for (int i = 0; i < nums.length; i++) {
