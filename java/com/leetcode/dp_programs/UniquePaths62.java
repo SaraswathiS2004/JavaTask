@@ -14,8 +14,8 @@ public class UniquePaths62 {
         else if(dp[x][y] != 0) return dp[x][y];
 
         int right = findUniquePaths(m , n , x , y+1 , dp);
-        int left = findUniquePaths(m , n , x+1 , y , dp);
-        dp[x][y] = right + left;
+        int down = findUniquePaths(m , n , x+1 , y , dp);
+        dp[x][y] = right + down;
         return dp[x][y];
     }
 }
